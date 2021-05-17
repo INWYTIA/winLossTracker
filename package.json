@@ -1,0 +1,27 @@
+{
+  "name": "winlosstracker",
+  "version": "1.0.0",
+  "description": "An application designed to assist in corelating and crossrefferencing competition data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INWYTIA/winLossTracker.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "Evan LaFollette",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/INWYTIA/winLossTracker/issues"
+  },
+  "homepage": "https://github.com/INWYTIA/winLossTracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.9",
+    "morgan": "^1.10.0"
+  }
+}
