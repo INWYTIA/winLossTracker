@@ -1,3 +1,16 @@
+let competitions = [];
+
+function populateList() {
+    let list = document.querySelector("#competitions");
+    list.innerHTML = "";
+  
+    competitions.forEach(competition => {
+      let li = document.createElement("li");
+      li.innerHTML = `<li>${competition.name}</li>`;
+      list.appendChild(li);
+    });
+}
+
 function sendFormData() {
     let nameEl = document.querySelector("#c-name");
 
