@@ -2,8 +2,11 @@ function sendFormData() {
     let nameEl = document.querySelector("#c-name");
 
     let competition = {
-        name: nameEl
+        name: nameEl.value
     }
+
+    console.log(competition);
+
       // also send to server
     fetch("/api/competition", {
         method: "POST",
@@ -19,14 +22,12 @@ function sendFormData() {
     .then(data => {
         // clear form
         nameEl.value = "";
-        amountEl.value = "";
     })
     .catch(err => {
         console.log(err)
 
         // clear form
         nameEl.value = "";
-        amountEl.value = "";
     });
 };
 
