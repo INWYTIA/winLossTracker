@@ -1,5 +1,16 @@
 let competitions = [];
 
+fetch("/api/competition")
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    // save db data on global variable
+    competitions = data;
+
+    populateList();
+  });
+
 function populateList() {
     let list = document.querySelector("#competitions");
     list.innerHTML = "";

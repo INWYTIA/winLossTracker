@@ -34,6 +34,15 @@ app.post("/api/competition", ({body}, res) => {
     });
 });
 
+app.get("/api/competition", (req, res) => {
+  Competition.find({}).sort({date: -1})
+    .then(dbTransaction => {
+      res.json(dbTransaction);
+    })
+    .catch(err => {
+      res.status(404).json(err);
+    });
+});
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
