@@ -31,7 +31,7 @@ function sendFormData() {
 
     console.log(competition);
 
-      // also send to server
+      //send to server
     fetch("/api/competition", {
         method: "POST",
         body: JSON.stringify(competition),
@@ -44,8 +44,10 @@ function sendFormData() {
         return response.json();
     })
     .then(data => {
+        competitions.unshift(data);
         // clear form
         nameEl.value = "";
+        populateList();
     })
     .catch(err => {
         console.log(err)
