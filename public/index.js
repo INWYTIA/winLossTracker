@@ -17,7 +17,8 @@ function populateList() {
   
     competitions.forEach(competition => {
       let li = document.createElement("li");
-      li.innerHTML = `<li>${competition.name}</li>`;
+      li.setAttribute("data-id", `${competition._id}`)
+      li.innerHTML = `${competition.name}`;
       list.appendChild(li);
     });
 }
@@ -44,6 +45,7 @@ function sendFormData() {
         return response.json();
     })
     .then(data => {
+        console.log(data);
         competitions.unshift(data);
         // clear form
         nameEl.value = "";
