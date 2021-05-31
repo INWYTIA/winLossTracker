@@ -3,3 +3,7 @@ p {
     text-decoration: underline;
     text-align: center;
 }
+
+.compCho {
+    border: 3px solid black;
+}

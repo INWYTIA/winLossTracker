@@ -17,7 +17,8 @@ function populateList() {
   
     competitions.forEach(competition => {
       let li = document.createElement("li");
-      li.setAttribute("data-id", `${competition._id}`)
+      li.setAttribute("data-id", `${competition._id}`);
+      li.className = "compCho";
       li.innerHTML = `${competition.name}`;
       list.appendChild(li);
     });
