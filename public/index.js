@@ -60,6 +60,8 @@ function sendFormData() {
     });
 };
 
-document.querySelector("#submit").onclick = function() {
+$(function(){
+  $("#submit").on("click", function(event) {
     sendFormData();
-};
+  })
+});
