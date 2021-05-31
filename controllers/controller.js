@@ -3,7 +3,14 @@ const router = express.Router();
 const Competition = require("../models/competition.js");
 
 router.get("/", function(req, res) {
-    res.render("index");
+    let hbsObject = {
+        competitions: []
+    };
+    Competition.find({}).lean().then(data => {
+        hbsObject.competitions = data;
+        console.log(hbsObject);
+        res.render("index", hbsObject);
+    })
 });
 
 router.post("/api/competition", ({body}, res) => {

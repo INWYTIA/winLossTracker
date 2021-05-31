@@ -6,6 +6,10 @@
 </div>
 <div class="options">
     <ul id="competitions">
-
+        {{#each competitions}}
+            <li class="compCho" data-id="{{_id}}">
+                {{name}}
+            </li>
+        {{/each}}
     </ul>
 </div>
