@@ -28,6 +28,6 @@ const competitionSchema = new Schema(
   }
 );
 
-const Competition = mongoose.model("Competition", competitionSchema);
+//const Competition = mongoose.model("Competition", competitionSchema);
 
-module.exports = Competition;
+module.exports = mongoose.model("Competition", competitionSchema);

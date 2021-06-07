@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const Competition = require("../models/competition.js");
+const db = require("../models");
 
 router.get("/", function(req, res) {
     let hbsObject = {
         competitions: []
     };
-    Competition.find({}).lean().then(data => {
+    db.Competition.find({}).lean().then(data => {
         hbsObject.competitions = data;
         console.log(hbsObject);
         res.render("index", hbsObject);
@@ -15,7 +15,7 @@ router.get("/", function(req, res) {
 
 router.post("/api/competition", ({body}, res) => {
     console.log(body);
-    Competition.create(body)
+    db.Competition.create(body)
       .then(dbTransaction => {
         res.json(dbTransaction);
       })
@@ -26,7 +26,7 @@ router.post("/api/competition", ({body}, res) => {
 });
   
 router.get("/api/competition", (req, res) => {
-    Competition.find({}).sort({date: -1})
+    db.Competition.find({}).sort({date: -1})
       .then(dbTransaction => {
         res.json(dbTransaction);
       })
