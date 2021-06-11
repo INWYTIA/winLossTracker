@@ -3,12 +3,12 @@ const router = express.Router();
 const db = require("../models");
 
 router.get("/", function(req, res) {
-    let hbsObject = {
-        competitions: []
-    };
+    //let hbsObject = {
+    //    competitions: []
+    //};
     db.Competition.find({}).lean().then(data => {
-        hbsObject.competitions = data;
-        res.render("index", hbsObject);
+        //hbsObject.competitions = data;
+        //res.render("index", hbsObject);
     })
 });
 
@@ -25,10 +25,10 @@ router.post("/api/competition", ({body}, res) => {
 
 router.get("/api/competition/detail", (req, res) => {
     db.Competition.findById(req.query.id).lean().then(data => {
-      let hbsObject = {
-        detail: data
-      };
-      res.render("comp", hbsObject);
+      //let hbsObject = {
+      //  detail: data
+      //};
+      //res.render("comp", hbsObject);
     })
     .catch(err => {
       console.log(err);

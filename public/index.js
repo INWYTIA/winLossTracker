@@ -12,9 +12,9 @@ $(function(){
         Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json"
       }
-    }).then(function() {
-      location.reload();
-    });
+    })//.then(function() {
+    //  location.reload();
+    //});
   })
 
   $(".compCho").on("click", function(event) {
